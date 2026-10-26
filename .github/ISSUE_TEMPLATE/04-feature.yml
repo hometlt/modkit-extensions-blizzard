@@ -1,0 +1,33 @@
+name: Feature request
+description: Propose a user workflow or improvement to an existing Modkit capability.
+title: "[Feature] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: Describe the task and where the current workflow stops.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired result
+      description: Describe the result from a user's point of view, including the output format if relevant.
+    validations:
+      required: true
+  - type: input
+    id: context
+    attributes:
+      label: Affected game, format or Modkit area
+      placeholder: "Example: SC2 Data authoring, UVM models, VS Code preview"
+  - type: textarea
+    id: current
+    attributes:
+      label: Current workaround or related capability
+      description: Link to an existing command, panel, API or issue if one is close.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: What would make this complete?
+      description: Give a small example and how its result could be checked.

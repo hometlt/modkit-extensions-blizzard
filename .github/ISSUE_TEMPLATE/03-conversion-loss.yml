@@ -1,0 +1,62 @@
+name: Conversion or fidelity loss
+description: Report missing, changed or corrupted content during import, export or cross-game conversion.
+title: "[Conversion] "
+body:
+  - type: input
+    id: route
+    attributes:
+      label: Source → target
+      placeholder: "Example: native map → UVW → SC2Map"
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Game and Modkit versions
+      placeholder: "Source game build, target game build, Modkit commit"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Name the conversion command or workflow and the smallest reproducible input. Include a file hash when the input cannot be shared.
+    validations:
+      required: true
+  - type: textarea
+    id: preserved
+    attributes:
+      label: What should survive the conversion?
+      description: Terrain, scale, objects, models, animations, materials, data, triggers, audio or other semantics.
+    validations:
+      required: true
+  - type: textarea
+    id: loss
+    attributes:
+      label: What changed or was lost?
+      description: Include coordinates, object IDs, field names, counts or before/after images when useful.
+    validations:
+      required: true
+  - type: textarea
+    id: settings
+    attributes:
+      label: Scale and conversion settings
+      description: Cell size, axes, units, source/target options and any reported losses.
+  - type: dropdown
+    id: checked-at
+    attributes:
+      label: Last stage checked
+      options:
+        - Source file or game
+        - Intermediate UVM or UVW
+        - Written target file reopened
+        - Target editor or viewer
+        - Running target game
+        - Not checked yet
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Receipts, logs or images
+      description: Attach relevant evidence and describe which stage each item proves. Remove secrets and private paths.

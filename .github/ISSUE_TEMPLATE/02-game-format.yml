@@ -1,0 +1,58 @@
+name: Game or format support
+description: Request inspection, import, export or authoring support for a native game format.
+title: "[Format] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tell us what you need to do with the format. Please do not upload copyrighted game archives or decompiled code without permission.
+  - type: input
+    id: game
+    attributes:
+      label: Game, publisher and version
+      placeholder: "Example: Game name, build number, platform"
+    validations:
+      required: true
+  - type: input
+    id: format
+    attributes:
+      label: Native format or file extension
+      placeholder: "Example: .SC2Map, .m3, archive type, or unknown"
+    validations:
+      required: true
+  - type: dropdown
+    id: operation
+    attributes:
+      label: Needed operation
+      multiple: true
+      options:
+        - Inspect metadata
+        - Read or import
+        - Preview or render
+        - Edit or author
+        - Export or write
+        - Convert to another game
+    validations:
+      required: true
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Concrete workflow
+      description: What input will you open, what action will you take, and what usable result do you need?
+    validations:
+      required: true
+  - type: textarea
+    id: samples
+    attributes:
+      label: Sample and provenance
+      description: Describe sample files, versions, hashes and where they came from. Share only files you have the right to share.
+  - type: textarea
+    id: references
+    attributes:
+      label: Known documentation or reference implementation
+      description: Links, specifications, or existing Modkit support that may be reused.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: How should support be checked?
+      description: For example, native corpus coverage, reopen round trip, rendered preview, editor check or in-game behavior.

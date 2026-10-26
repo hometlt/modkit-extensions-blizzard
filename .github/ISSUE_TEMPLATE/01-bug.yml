@@ -1,0 +1,67 @@
+name: Bug report
+description: Report a reproducible problem in Modkit or an existing game extension.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Russian or English is welcome. Please remove private paths, tokens and copyrighted game files from logs and attachments.
+  - type: input
+    id: area
+    attributes:
+      label: Affected area
+      description: Package, app, extension, command or UI panel if known.
+      placeholder: "Example: SC2 map import, M3 preview, MCP inventory"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Modkit version or commit
+      placeholder: "Release version or commit SHA"
+    validations:
+      required: true
+  - type: input
+    id: game-format
+    attributes:
+      label: Game and native format
+      placeholder: "Example: StarCraft II, SC2Map; leave blank if not applicable"
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include the smallest input and the exact operation or command. A content hash helps when the file cannot be shared.
+      placeholder: "1. Open ...\n2. Run ...\n3. Observe ..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: Include the error text, visible defect or data loss.
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence
+    attributes:
+      label: Where was this verified?
+      options:
+        - Source or codec test
+        - Import and reopen in Modkit
+        - Export and reopen
+        - Viewer or editor
+        - Running game
+        - Not verified yet
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs or screenshots
+      description: Paste short logs or drag files here. Remove secrets and personal paths first.
